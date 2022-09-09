@@ -22,12 +22,12 @@ docker run -dt --name EC -p 8080:80 -v /home/ec2-user/ecomm:/usr/local/apache2/h
 #use FROM directive to copy the base image
 #Base image is -httpd
 FROM httpd
-
 #use COPY directive to copy the code
 COPY . /usr/local/apache2/htdocs/ 
 docker build -t ecomm .
 docker image ls
 docker run -dt --name EC -p 8090:80 ecomm
+
 [KUBERNETES]
 set up aws cli 
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
